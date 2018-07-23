@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">JamesQiu_LinlinHan_COMP304_Assign6</string>
+    <string name="app_name">My Messaging App V 1.0_JamesQiu_LinlinHan</string>
+    <string name="hello_world">Welcome to Messaging page!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_message">MessageActivity</string>
+    <string-array name="contacts">
+        <item>Larry Page</item>
+        <item>Sergey Brin</item>
+        <item>Eric Schmidt</item>
+        <item>Andy Rubin</item>
+        <item>James Gosling</item>
+        <item>Anders Hejlsberg </item>
+        <item>Bjarne Stroustrup</item>
+    </string-array>
+
 </resources>
