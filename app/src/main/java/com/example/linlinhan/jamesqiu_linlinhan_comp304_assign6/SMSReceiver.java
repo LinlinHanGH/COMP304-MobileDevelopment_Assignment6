@@ -6,7 +6,7 @@ import android.telephony.SmsMessage;
 import android.util.Log;
 import android.widget.Toast;
 
-public class SMSReceiver extends BroadcastReceiver{
+public class SMSReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         //---get the SMS message passed in---
@@ -24,7 +24,7 @@ public class SMSReceiver extends BroadcastReceiver{
                     str += msgs[i].getOriginatingAddress();
                     str += ": ";
                 }
-                    //---get the message body---
+                //---get the message body---
                 str += msgs[i].getMessageBody().toString();
             }
             //---display the new SMS message---
@@ -39,3 +39,4 @@ public class SMSReceiver extends BroadcastReceiver{
             context.sendBroadcast(broadcastIntent);
         }
     }
+}
