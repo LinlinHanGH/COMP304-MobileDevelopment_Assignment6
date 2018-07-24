@@ -46,11 +46,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
+
+                //intent=new Intent(this, MessageActivity.class);
                 // ListView Clicked item index
                 int itemPosition = position;
                 // ListView Clicked item value
                 String item = (String) lstView.getItemAtPosition(position);
-                // Show Alert intent.putExtra("contactName",item); startActivity(intent);
+                // Show Alert
+                intent.putExtra("contactName",item);
+                startActivity(intent);
             }
         });
 
