@@ -24,6 +24,7 @@ public class MessageActivity extends Activity {
     private EditText eText;
     private TextView SMSes;
     private TextView textMessage;
+    private String portNum="";
     //
     String SENT = "SMS_SENT";
     String DELIVERED = "SMS_DELIVERED";
@@ -54,8 +55,13 @@ public class MessageActivity extends Activity {
 
         Bundle extras = getIntent().getExtras();
         String contactName = "";
+
         if (extras != null)
+        {
             contactName = extras.getString("contactName");
+            portNum=extras.getString("portNum");
+        }
+
         textMessage = (TextView) findViewById(R.id.textMessage);
         textMessage.setMovementMethod(ScrollingMovementMethod.getInstance());
         TextView tView = (TextView) findViewById(R.id.textView);
@@ -156,7 +162,7 @@ public class MessageActivity extends Activity {
     //
     public void sendMessage(View v) {
         eText = (EditText) findViewById(R.id.editText);
-        sendSMS("5556", eText.getText().toString());
+        sendSMS(portNum, eText.getText().toString());
         textMessage.setText(textMessage.getText() + "\n" + eText.getText());
     }
 

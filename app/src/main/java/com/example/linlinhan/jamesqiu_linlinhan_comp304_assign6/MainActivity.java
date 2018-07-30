@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     String[] contacts;
+    String[] portNums;
     ListView lstView;
     //
     Intent intent;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         lstView.setChoiceMode(ListView.CHOICE_MODE_NONE);
         lstView.setTextFilterEnabled(true);
         contacts = getResources().getStringArray(R.array.contacts);
+        portNums=getResources().getStringArray(R.array.portNums);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1,
                 contacts);
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 String item = (String) lstView.getItemAtPosition(position);
                 // Show Alert
                 intent.putExtra("contactName",item);
+                intent.putExtra("portNum",portNums[position-1]);
                 startActivity(intent);
             }
         });
